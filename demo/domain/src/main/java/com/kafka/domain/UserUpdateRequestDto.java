@@ -1,5 +1,5 @@
 package com.kafka.domain;
 
-public record UserUpdateRequestDto(String name,int age){
+public record UserUpdateRequestDto(String name, int email) {
 
 }
