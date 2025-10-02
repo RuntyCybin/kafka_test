@@ -2,9 +2,12 @@ package com.kafka.application.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.kafka.domain.User;
 import com.kafka.domain.UserUpdateRequestDto;
 
+@Service
 public class UserServiceImpl implements UserService {
   @Override
   public void createUser(UserUpdateRequestDto userRequest) {
