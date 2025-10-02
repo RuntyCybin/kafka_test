@@ -3,35 +3,17 @@ package com.kafka.application.service;
 import java.util.List;
 
 import com.kafka.domain.User;
+import com.kafka.domain.UserUpdateRequestDto;
 
-public class UserService implements UserServiceInteface {
-  @Override
-  public void createUser(String name, String email) {
-    // Implementation for creating a user
-    System.out.println("User created: " + name + ", " + email);
-  }
+public interface UserService {
 
-  @Override
-  public void deleteUser(String userId) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deleteUser'");
-  }
+  void createUser(UserUpdateRequestDto userRequest);
 
-  @Override
-  public boolean updateUser(String userId, String name, String email) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
-  }
+  void deleteUser(String userId);
 
-  @Override
-  public User getUserById(String userId) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getUserById'");
-  }
+  boolean updateUser(UserUpdateRequestDto userRequest);
 
-  @Override
-  public List<User> getAllUsers() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getAllUsers'");
-  }
+  User getUserById(String userId);
+
+  List<User> getAllUsers();
 }
