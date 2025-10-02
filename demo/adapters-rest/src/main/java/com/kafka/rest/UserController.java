@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kafka.application.service.UserService;
 import com.kafka.domain.User;
+import com.kafka.domain.UserUpdateRequestDto;
 
 @RestController
 @RequestMapping("/api/users")
@@ -27,8 +28,8 @@ public class UserController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public ResponseEntity<Void> createUser(@RequestBody User user) {
-    userService.createUser(user.getName(), user.getEmail());
+  public ResponseEntity<Void> createUser(@RequestBody UserUpdateRequestDto userRequest) {
+    userService.createUser(userRequest);
     return ResponseEntity.status(HttpStatus.CREATED).build();
   }
 
@@ -41,8 +42,8 @@ public class UserController {
 
   @PostMapping("/update")
   @ResponseStatus(HttpStatus.OK)
-  public ResponseEntity<Boolean> updateUser(@RequestBody User user) {
-    boolean updated = userService.updateUser(user.getName(), user.getEmail());
+  public ResponseEntity<Boolean> updateUser(@RequestBody UserUpdateRequestDto userRequest) {
+    boolean updated = userService.updateUser(userRequest);
     return ResponseEntity.status(HttpStatus.OK).body(updated);
   }
 
