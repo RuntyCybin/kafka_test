@@ -14,6 +14,11 @@ public class Message {
     this.content = content;
   }
 
+  public Message(String content, LocalDateTime timestamp) {
+    this.content = content;
+    this.timestamp = timestamp;
+  }
+
   public String getContent() {
     return content;
   }
