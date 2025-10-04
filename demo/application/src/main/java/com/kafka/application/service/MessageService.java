@@ -16,9 +16,10 @@ public class MessageService implements CreateMessageUseCase {
   }
 
   @Override
-  public void createMessage(Message message) {
+  public Message createMessage(Message message) {
     // Business logic for creating a message can be added here
     messsagePublisher.publishMessage(message);
+    return message;
   }
 
 }
