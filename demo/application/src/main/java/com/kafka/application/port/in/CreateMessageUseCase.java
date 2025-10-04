@@ -4,6 +4,6 @@ import com.kafka.domain.Message;
 
 public interface CreateMessageUseCase {
 
-  void createMessage(Message message);
+  Message createMessage(Message message);
 
 }
