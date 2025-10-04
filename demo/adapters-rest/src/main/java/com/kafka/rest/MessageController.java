@@ -2,6 +2,7 @@ package com.kafka.rest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +21,11 @@ public class MessageController {
     this.createMessageUseCase = createMessageUseCase;
   }
 
-  @PostMapping
+  @PostMapping("/create")
   @ResponseStatus(HttpStatus.CREATED)
-  public ResponseEntity<Void> createMessage(@RequestBody Message message) {
-    createMessageUseCase.createMessage(message);
-    return ResponseEntity.status(HttpStatus.CREATED).build();
+  public ResponseEntity<Message> createMessage(@RequestBody Message message) {
+    System.out.println("createMessage: " + message.getContent());
+    Message resp = createMessageUseCase.createMessage(message);
+    return ResponseEntity.status(HttpStatus.CREATED).body(resp);
   }
 }
