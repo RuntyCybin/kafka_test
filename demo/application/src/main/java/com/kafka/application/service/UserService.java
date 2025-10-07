@@ -7,7 +7,7 @@ import com.kafka.domain.UserUpdateRequestDto;
 
 public interface UserService {
 
-  void createUser(UserUpdateRequestDto userRequest);
+  User createUser(UserUpdateRequestDto userRequest);
 
   void deleteUser(String userId);
 
