@@ -26,11 +26,11 @@ public class UserController {
     this.userService = userService;
   }
 
-  @PostMapping
+  @PostMapping("/create")
   @ResponseStatus(HttpStatus.CREATED)
-  public ResponseEntity<Void> createUser(@RequestBody UserUpdateRequestDto userRequest) {
-    userService.createUser(userRequest);
-    return ResponseEntity.status(HttpStatus.CREATED).build();
+  public ResponseEntity<User> createUser(@RequestBody UserUpdateRequestDto userRequest) {
+    User user = userService.createUser(userRequest);
+    return ResponseEntity.status(HttpStatus.CREATED).body(user);
   }
 
   @DeleteMapping
