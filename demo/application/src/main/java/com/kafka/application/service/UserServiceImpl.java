@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.kafka.application.port.in.UserUseCase;
 import com.kafka.domain.User;
-import com.kafka.domain.UserUpdateRequestDto;
+import com.kafka.rest.UserUpdateRequestDto;
+import com.kafka.rest.UserUpdateResponseDto;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,10 +19,13 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public User createUser(UserUpdateRequestDto userRequest) {
+  public UserUpdateResponseDto createUser(UserUpdateRequestDto userRequest) {
     // Implementation for creating a user
     System.out.println("User created: " + userRequest.name() + ", " + userRequest.email());
-    return usersPublisher.createUserMessage(new User(userRequest.name(), userRequest.email()));
+    User user = usersPublisher.createUserMessage(new User(userRequest.name(), userRequest.email()));
+    UserUpdateResponseDto response = new UserUpdateResponseDto(user.getName(), user.getEmail());
+    return response;
+
   }
 
   @Override

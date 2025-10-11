@@ -1,13 +1,13 @@
 package com.kafka.application.service;
 
 import java.util.List;
-
 import com.kafka.domain.User;
-import com.kafka.domain.UserUpdateRequestDto;
+import com.kafka.rest.UserUpdateRequestDto;
+import com.kafka.rest.UserUpdateResponseDto;
 
 public interface UserService {
 
-  User createUser(UserUpdateRequestDto userRequest);
+  UserUpdateResponseDto createUser(UserUpdateRequestDto userRequest);
 
   void deleteUser(String userId);
 
