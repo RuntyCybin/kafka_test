@@ -18,8 +18,8 @@ public class UserServiceUseCaseImpl implements UserUseCase {
   @Override
   public User createUserMessage(User user) {
     // Business logic for creating a user can be added here
-    System.out.println("User created: " + user);
-    usersPublisher.createUserMessage(user);
+    System.out.println("Publishing user: " + user);
+    this.usersPublisher.createUserMessage(user);
     return user;
   }
 

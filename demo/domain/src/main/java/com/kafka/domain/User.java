@@ -13,11 +13,11 @@ public class User {
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public String getEmail() {
-    return email;
+    return this.email;
   }
 
   public void setName(String name) {
@@ -31,8 +31,8 @@ public class User {
   @Override
   public String toString() {
     return "User{" +
-        "name='" + name + '\'' +
-        ", email='" + email + '\'' +
+        "name='" + this.name + '\'' +
+        ", email='" + this.email + '\'' +
         '}';
   }
 }
