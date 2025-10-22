@@ -16,12 +16,6 @@
       <version>${project.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.kafka</groupId>
-      <artifactId>adapters-rest</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-
     <!-- Solo anotaciones de Spring si quieres servicios, sin starters web/kafka -->
     <dependency>
       <groupId>org.springframework</groupId>
