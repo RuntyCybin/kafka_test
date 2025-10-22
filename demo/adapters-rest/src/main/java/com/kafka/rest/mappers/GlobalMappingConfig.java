@@ -1,4 +1,4 @@
-package com.kafka.boot;
+package com.kafka.rest.mappers;
 
 import org.mapstruct.MapperConfig;
 import org.mapstruct.NullValueCheckStrategy;
